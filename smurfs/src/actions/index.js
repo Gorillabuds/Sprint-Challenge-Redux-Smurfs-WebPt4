@@ -19,8 +19,8 @@ export const getSmurfs=()=>{
   const smurfs=axios.get(`${URL}`);
   return dispatch=>{
     dispatch({type:GET_SMURF});
-      smurfs.then(responsse=>{
-        dispatch({type:GET_SMURF_SUCCESS,payload:Response.data});
+      smurfs.then(response=>{
+        dispatch({type:GET_SMURF_SUCCESS,payload:response.data});
       }).catch(err=>{
         dispatch({type:ERR,payload:err})
       })
